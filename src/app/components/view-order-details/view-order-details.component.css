@@ -1,0 +1,7 @@
+
+
+@media only screen and (max-width: 900px) {
+  .flex-space-between {
+    flex-direction: column;
+  }
+}

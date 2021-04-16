@@ -1,0 +1,14 @@
+<div *ngFor="let item of data.order">
+  <div class="flex-space-between">
+    <div style="flex: 3">
+      <img style="max-height: 10rem; margin-right: 2rem" [src]="item.menuItemId.imageUrl" alt="">
+    </div>
+    <div style="flex: 6">
+      <h2> {{item.menuItemId.title}}</h2>
+      <div>Kogus: {{item.amount}}</div>
+      <div>Eur/tk: {{item.menuItemId.price}}</div>
+      <div>Kirjeldus: {{item.menuItemId.description}}</div>
+    </div>
+  </div>
+  <hr>
+</div>

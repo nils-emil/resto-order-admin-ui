@@ -1,0 +1,21 @@
+<div class="form-container">
+  <form [formGroup]="personForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Kasutaja</mat-label>
+      <input formControlName="username" matInput placeholder="">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-post</mat-label>
+      <input formControlName="email" matInput type="email" placeholder="" value="nilsemil.lille@gmail.com">
+    </mat-form-field>
+    <mat-form-field style="width: 100%" *ngIf="user.isAdmin">
+      <mat-label>Adiminstraator</mat-label>
+      <select formControlName="isAdmin" matNativeControl required>
+        <option [value]="true">Jah</option>
+        <option [value]="false">EI</option>
+      </select>
+    </mat-form-field>
+    <button (click)="onNoClick()" class="full-width" mat-raised-button color="accent">Salvesta</button>
+  </form>
+</div>
+

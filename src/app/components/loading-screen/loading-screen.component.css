@@ -1,0 +1,17 @@
+.bg {
+  background: #b7b6b6;
+  height: 100vh;
+  z-index: 999;
+  position: fixed;
+  opacity: 0.40;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.bar {
+  width: 90%;
+  top: 50%;
+  margin: 0 auto;
+
+}

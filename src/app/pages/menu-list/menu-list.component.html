@@ -1,0 +1,49 @@
+<div class="menu-edit-container">
+  <div class="menu-edit-container--categories">
+    <h2 class="header">Kategooriad</h2>
+    <div class="category" *ngFor="let category of categories"
+         (click)="openCategoryItems(category)">{{category.name}}</div>
+    <div class="footer mt-2" (click)="addNewCategory()">
+      <button mat-mini-fab color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+      <div class="ml-1">Lisa uus</div>
+    </div>
+  </div>
+  <div class="menu-edit-container--items">
+    <div class="header" *ngIf="openCategoryId">
+      <h1>{{openCategoryName}}</h1>
+      <button (click)="moveCategory('UP')" mat-mini-fab color="primary">
+        <fa-icon [icon]="faUp" ></fa-icon>
+      </button>
+      <button (click)="moveCategory('DOWN')" mat-mini-fab color="primary">
+        <fa-icon [icon]="faDown" ></fa-icon>
+      </button>
+      <button (click)="editCategory()" mat-mini-fab color="primary">
+        <fa-icon [icon]="faEdit"></fa-icon>
+      </button>
+      <button (click)="deleteCategory()" mat-mini-fab color="primary">
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
+    </div>
+    <mat-card class="card" *ngFor="let item of menuItems">
+      <h2 (click)="editMenuItem(item)">{{item.title}}</h2>
+      <div class="menu-item-container">
+        <div class="menu-item-image">
+          <img [src]="item.imageUrl" alt="Photo">
+        </div>
+        <div class="menu-item-content">
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+</div>
+
+<div class="corner-add-button">
+  <button (click)="editMenuItem({})" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+

@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fafafa;
+}
+
+
+.corner-add-button {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.mt-2 {
+  margin-top: 1rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 1rem !important;
+}
+
+.ml-1 {
+  margin-left: .5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.mb-4 {
+  margin-bottom: 2rem;
+}

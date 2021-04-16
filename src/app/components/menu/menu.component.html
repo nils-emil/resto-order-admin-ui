@@ -1,0 +1,20 @@
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Management</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon [matMenuTriggerFor]="menu" class="pull-right">menu</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button routerLink="/" mat-menu-item>Tellimused</button>
+          <button routerLink="/access" mat-menu-item>Ligipääsud</button>
+          <button routerLink="/menu" mat-menu-item>Menüü</button>
+          <button routerLink="/tables" mat-menu-item>Lauad</button>
+          <button routerLink="/password" mat-menu-item>Parooli vahetus</button>
+          <button (click)="logout()" mat-menu-item>Logi välja</button>
+        </mat-menu>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+<router-outlet></router-outlet>

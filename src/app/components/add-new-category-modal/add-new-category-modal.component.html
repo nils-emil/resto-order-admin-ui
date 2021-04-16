@@ -1,0 +1,10 @@
+<div class="form-container">
+  <form [formGroup]="createMenuItemForm"  (ngSubmit)="submit()">
+    <mat-form-field style="width: 100%" class="example-full-width">
+      <mat-label>Nimi</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+    <button type="submit" class="full-width" mat-raised-button color="accent">Salvesta</button>
+  </form>
+</div>
+

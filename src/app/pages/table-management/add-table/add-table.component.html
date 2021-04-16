@@ -1,0 +1,24 @@
+<div class="text-container">
+  <h2>Lisa uus laud</h2>
+</div>
+<div class="form-container">
+  <form [formGroup]="tableForm"  class="example-form" (ngSubmit)="submitTable()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Laua kood</mat-label>
+      <input formControlName="code" matInput placeholder="" maxlength="6" minlength="6" value="">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Kirjeldus</mat-label>
+      <textarea formControlName="description" name="tableCode" matInput placeholder=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%">
+      <mat-label>Teavitused võimaldatud</mat-label>
+      <select formControlName="notifications" name="disabled" matNativeControl required>
+        <option value="true">Jah</option>
+        <option value="false">EI</option>
+      </select>
+    </mat-form-field>
+    <button type=submit class="full-width" mat-raised-button color="accent">Salvesta</button>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+
+table {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.container > button {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.isWaiting {
+  background: #eb5e0b;
+}
+
+.container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+

@@ -1,0 +1,46 @@
+<mat-dialog-content>
+  <div>
+    <form [formGroup]="createMenuItemForm" (ngSubmit)="onSubmit()" class="flex-center-column width-50" style="max-width: 500px">
+      <input #fileInput style="display: none" type="file" (change)="fileChangeEvent($event)"/>
+      <img *ngIf="!imageChangedEvent && data.item" [src]="data.item.imageUrl" alt="">
+      <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="4 / 4"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"></image-cropper>
+      <button *ngIf="!imageChangedEvent" (click)="openUploadDialog()" mat-raised-button color="primary">Uuenda pilt</button>
+      <button *ngIf="imageChangedEvent" (click)="cancelImageUpload()" mat-raised-button color="primary">Tühista pildi uuendamine</button>
+<!--      <mat-form-field class="mt-2">-->
+<!--        <mat-label>Kuvatakse kliendile</mat-label>-->
+<!--        <mat-slide-toggle formControlName="visible">Slide</mat-slide-toggle>-->
+<!--      </mat-form-field>-->
+
+      <mat-slide-toggle style="margin-top: 1rem" formControlName="visible">Kuvatakse kliendile</mat-slide-toggle>
+      <mat-form-field class="mt-2">
+        <mat-label>Nimi</mat-label>
+        <input formControlName="title" matInput value="">
+      </mat-form-field>
+      <mat-form-field style="width: 100%">
+        <mat-label>Kategooria</mat-label>
+        <select formControlName="categoryId" matNativeControl>
+          <option *ngFor="let category of categories" [ngValue]="category._id">{{category.name}} </option>
+        </select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Hind</mat-label>
+        <input formControlName="price" type="number" matInput value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Kirjeldus</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Salvesta</button>
+      <button class="mt-2 mb-2" type="button" *ngIf="data.item._id" (click)="deleteItem()" mat-raised-button color="primary">Kustuta</button>
+    </form>
+  </div>
+
+</mat-dialog-content>
+

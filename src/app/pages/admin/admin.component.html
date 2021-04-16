@@ -1,0 +1,42 @@
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="order-table" >
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Laua kood </th>
+      <td mat-cell *matCellDef="let element"> {{element.tableCode}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Kutsumise aeg </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdTime | date:'dd.MM.yyyy HH:mm' }} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Põhjus </th>
+      <td mat-cell *matCellDef="let element"> {{element.callType ? getReason(element.callType) : 'Tellimus'}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef style="width: 25%"> Tegevus </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="flex-space-between">
+          <button *ngIf="element.isWaiting" (click)="markTableServiced(element)" mat-raised-button color="primary">✓</button>
+          <button *ngIf="!element.isWaiting" (click)="markTableServiced(element)" mat-raised-button color="primary">x</button>
+          <button *ngIf="element.callType === 'ORDER'" (click)="viewOrderDetails(element)" mat-raised-button color="primary">Tellimuse sisu</button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row [ngClass]="[row.isWaiting ? 'isWaiting' : 'notWaiting']" *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <button mat-raised-button color="primary" (click)="loadMore()">Laadi rohkem</button>
+</div>
+

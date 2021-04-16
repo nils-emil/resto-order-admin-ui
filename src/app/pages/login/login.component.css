@@ -1,0 +1,40 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+}
+.login__form {
+  padding: 10rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  background-color: #ddfeff;
+  -webkit-box-shadow: -3px 0px 5px 0px rgba(221, 254, 255, 1);
+  -moz-box-shadow: -3px 0px 5px 0px rgba(221, 254, 255, 1);
+  box-shadow: -3px 0px 5px 0px rgba(221, 254, 255, 1);
+}
+.login__header {
+  margin: 0 0 2rem;
+}
+.login__field-container {
+  margin-bottom: 0.5em;
+}
+.login__svg-container {
+  display: flex;
+  justify-content: center;
+}
+.login__svg {
+  width: 50%;
+}
+.login__error-message {
+  color: red;
+  margin: 0 0 0.5em;
+  font-weight: 500;
+}
+@media screen and (min-width: 900px) {
+  .login {
+    grid-template-columns: 70% 30%;
+  }
+}
+

@@ -1,0 +1,31 @@
+<div class="login">
+
+  <div class="login__svg-container">
+    <img src="../../../assets/world_wide_web_monochromatic.svg" class="login__svg"/>
+  </div>
+
+  <div class="login__form">
+    <form [formGroup]="passwordForm" (ngSubmit)="login()">
+      <h1 class="login__header">Tere tulemast!</h1>
+      <div class="login__field-container">
+        <mat-form-field [style.fontSize]="30">
+          <mat-label>Emaili aadress</mat-label>
+          <input formControlName="email" matInput>
+        </mat-form-field>
+      </div>
+      <div class="login__field-container">
+        <mat-form-field [style.fontSize]="30">
+          <mat-label>Parool</mat-label>
+          <input formControlName="password" type="password" matInput>
+        </mat-form-field>
+      </div>
+      <div class="login__field-container">
+        <section>
+          <div class="example-button-row">
+            <button (click)="login()" mat-raised-button color="primary">Login</button>
+          </div>
+        </section>
+      </div>
+    </form>
+  </div>
+</div>
