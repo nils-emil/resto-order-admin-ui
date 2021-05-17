@@ -9,6 +9,7 @@ import {AccessComponent} from "./pages/access/access.component";
 import {MenuComponent} from "./components/menu/menu.component";
 import {PasswordInitComponent} from "./pages/password-init/password-init.component";
 import {AuthGuard} from "./guard/auth.guard";
+import {UiConfigComponent} from "./pages/ui-config/ui-config.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
     children: [
       {path: 'password', component: PasswordComponent},
       {path: 'access', component: AccessComponent},
+      {path: 'config', component: UiConfigComponent},
       {path: 'menu', component: MenuListComponent},
       {path: 'tables', component: TableManagementComponent},
       {path: '', component: AdminComponent}

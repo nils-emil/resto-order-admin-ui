@@ -44,6 +44,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 import { PasswordChangeComponent } from './pages/password-change/password-change.component';
 import { PasswordInitComponent } from './pages/password-init/password-init.component';
+import { UiConfigComponent } from './pages/ui-config/ui-config.component';
 
 const config: SocketIoConfig = {url: environment.socket_url, options: {}};
 
@@ -67,7 +68,8 @@ const config: SocketIoConfig = {url: environment.socket_url, options: {}};
     MenuComponent,
     LoadingScreenComponent,
     PasswordChangeComponent,
-    PasswordInitComponent
+    PasswordInitComponent,
+    UiConfigComponent
   ],
   imports: [
     BrowserModule,

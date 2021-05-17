@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="pw-change-container">
+    <form *ngFor="let conf of configuration" (ngSubmit)="submit(conf)" style="margin-bottom: 8rem">
+      <p>{{conf.title}}</p>
+      <mat-label style="display: none">{{conf.title}}</mat-label>
+      <ng-container *ngIf="conf.type === 'text'">
+        <input [(ngModel)]="conf.value"  matInput [ngModelOptions]="{standalone: true}">
+      </ng-container>
+      <mat-label></mat-label>
+      <input  style="display: none" [ngModel]="conf.key" matInput [ngModelOptions]="{standalone: true}">
+      <button type="submit" class="full-width" mat-raised-button color="accent">Salvesta</button>
+    </form>
+  </div>
+</div>
+
